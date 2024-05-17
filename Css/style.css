@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    overflow: hidden /**serve para ocultar o scrool da tela principal**/
 }
 
 .container {
@@ -82,6 +83,16 @@ nav ul {
     margin: 0;
     text-align: center;
     height: 500px;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #4CAF50;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #fafafa;
+    border-radius: 10px;
 }
 
 nav ul li {
