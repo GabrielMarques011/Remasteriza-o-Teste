@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dejemajosa Inicio</title>
+    <title>Menu Hamburguer</title>
     <link rel="stylesheet" href="../Css/style.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Dejemajosa</h1>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-            <nav id="menu">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Quem Somos</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Fale Conosco</a></li>
-                    <li><a href="#">Normas Regulamentadoras</a></li>
-                    <li><a href="#">Downloads</a></li>
-                    <li><a href="#">Notícias</a></li>
-                    <li><a href="#">Ficha de Encaminhamento</a></li>
-                    <li><a href="#">Pericial Judicial</a></li>
-                    <li><a href="#">Doença Ocupacional</a></li>
-                    <li><a href="#">Assistência Técnica</a></li>
-                    <li><a href="#">Localização</a></li>
-                </ul>
-            </nav>
+            <button class="hamburger" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
+
+    <div id="overlay" onclick="toggleMenu()"></div>
+
+    <nav id="menu">
+        <button class="close-menu" onclick="toggleMenu()">X</button>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Quem Somos</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+            <li><a href="#">Normas Regulamentadoras</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Notícias</a></li>
+            <li><a href="#">Ficha de Encaminhamento</a></li>
+            <li><a href="#">Pericial Judicial</a></li>
+            <li><a href="#">Doença Ocupacional</a></li>
+            <li><a href="#">Assistência Técnica</a></li>
+            <li><a href="#">Localização</a></li>
+        </ul>
+    </nav>
 
     <main>
         <div class="container">
@@ -62,7 +70,11 @@
     <script>
         function toggleMenu() {
             const menu = document.getElementById('menu');
+            const overlay = document.getElementById('overlay');
+            const hamburger = document.querySelector('.hamburger');
             menu.classList.toggle('show');
+            overlay.classList.toggle('show');
+            hamburger.classList.toggle('active');
         }
     </script>
 </body>

@@ -3,8 +3,8 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    overflow: hidden /**serve para ocultar o scrool da tela principal**/
+    background-color: #d4ffe1;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 .container {
@@ -13,12 +13,13 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ffffff;
+    color: #156618;
     padding: 1rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 header h1 {
@@ -30,30 +31,26 @@ header h1 {
     font-size: 1.5rem;
     background: none;
     border: none;
-    color: white;
+    color: #156618;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 2rem;
     height: 2rem;
-    transition: transform 5s;
+    z-index: 101; /* Ensure it is above the overlay */
 }
 
-/*.hamburger .bar {
+.hamburger .bar {
     width: 100%;
     height: 0.25rem;
-    background-color: white;
+    background-color: #156618;
     border-radius: 10px;
     transition: all 0.3s ease;
 }
 
-.hamburger.active {
-    transform: rotate(90deg);
-}
-
 .hamburger.active .bar:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translateY(0.5rem);
 }
 
 .hamburger.active .bar:nth-child(2) {
@@ -61,55 +58,81 @@ header h1 {
 }
 
 .hamburger.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}*/
+    transform: rotate(-45deg) translateY(-0.5rem);
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+    z-index: 100; /* Ensure it covers content but is below the menu */
+}
+
+#overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
 
 nav {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: left 0.3s ease;
+    z-index: 101; /* Ensure it is above the overlay */
+    overflow-y: auto;
 }
 
 nav.show {
-    max-height: 500px; /* Adjust based on content */
-    opacity: 1;
+    left: 0;
 }
 
 nav ul {
-    overflow: auto;
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center;
-    height: 500px;
-}
-
-::-webkit-scrollbar{
-    width: 10px;
-    background-color: #4CAF50;
-}
-
-::-webkit-scrollbar-thumb{
-    background-color: #fafafa;
-    border-radius: 10px;
+    text-align: left;
+    padding-top: 2rem; /* Adjust for better alignment */
 }
 
 nav ul li {
-    margin: 10px;
-    background-color: #5ebd61;
-    border-radius: 20px;
-    padding: 20px;
+    margin: 1rem 0;
 }
 
 nav ul li a {
-    color: white;
+    color: #156618;
     text-decoration: none;
     font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: all 0.8s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    background-color: #beffc0;
+}
+
+.close-menu {
+    background: none;
+    border: none;
+    color: #156618;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: right;
+    width: 100%;
+}
+
+.close-menu:hover{
+    color: #39a03d;
 }
 
 main {
@@ -121,7 +144,7 @@ main {
 }
 
 .intro h2 {
-    color: #4CAF50;
+    color: #156618;
 }
 
 .services {
@@ -129,16 +152,16 @@ main {
     border: 1px solid #ddd;
     padding: 1rem;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .services h2 {
-    color: #4CAF50;
+    color: #156618;
 }
 
 footer {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ffffff;
+    color: #156618;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
