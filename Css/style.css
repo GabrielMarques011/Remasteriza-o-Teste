@@ -3,20 +3,59 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-color: #d4ffe1;
+    background-color: #12712e;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
+.whatsapp-link{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #58c45c;
+    color: white;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 1000;
+    transition: all 0.2s;
+}
+
+.whatsapp-link:hover{
+    background-color: #3ba13f;
+}
+
+.fa-whatsapp{
+    margin-top: 16px;
+    transition: all 0.2s;
+}
+
+/* .fa-whatsapp:hover{
+    opacity: 0.5;
+} */
+
+.container-principal{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffff;
+    justify-content: space-between  ;
+}
+
 .container {
-    width: 80%;
+    width: 60%;
     margin: 0 auto;
 }
 
 header {
     background-color: #ffffff;
-    color: #156618;
+    color: #004600;
     padding: 1rem 0;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -25,40 +64,30 @@ header {
 header h1 {
     margin: 0;
     font-size: 2rem;
+    color: #014101;
 }
 
-.hamburger {
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: #156618;
-    cursor: pointer;
+.container-secundario{
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    z-index: 101; /* Ensure it is above the overlay */
+    margin: auto 0;
+    margin-left: 30px;
 }
 
-.hamburger .bar {
-    width: 100%;
-    height: 0.25rem;
-    background-color: #156618;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+.icon{
+    width: 33px;
+    height: 33px;
+    padding-right: 30px;
+    transition: all 0.5s;
 }
 
-.hamburger.active .bar:nth-child(1) {
-    transform: rotate(45deg) translateY(0.5rem);
+.icon:hover{
+    opacity: 0.5;
+    cursor: pointer;
 }
 
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: rotate(-45deg) translateY(-0.5rem);
+.container-principal img{
+    height: 90px;
+    padding-right: 30px;
 }
 
 #overlay {
@@ -71,7 +100,7 @@ header h1 {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
-    z-index: 100; /* Ensure it covers content but is below the menu */
+    z-index: 100;
 }
 
 #overlay.show {
@@ -87,7 +116,7 @@ nav {
     height: 100%;
     background-color: #ffffff;
     transition: left 0.3s ease;
-    z-index: 101; /* Ensure it is above the overlay */
+    z-index: 101;
     overflow-y: auto;
 }
 
@@ -100,7 +129,7 @@ nav ul {
     padding: 0;
     margin: 0;
     text-align: left;
-    padding-top: 2rem; /* Adjust for better alignment */
+    padding-top: 2rem;
 }
 
 nav ul li {
@@ -123,7 +152,7 @@ nav ul li a:hover {
 .close-menu {
     background: none;
     border: none;
-    color: #156618;
+    color: #004600;
     font-size: 1.5rem;
     padding: 1rem;
     cursor: pointer;
@@ -141,10 +170,11 @@ main {
 
 .intro {
     text-align: center;
+    color: rgb(255, 255, 255);
 }
 
 .intro h2 {
-    color: #156618;
+    color: #ffffff;
 }
 
 .services {
@@ -156,12 +186,12 @@ main {
 }
 
 .services h2 {
-    color: #156618;
+    color: #004600;
 }
 
 footer {
     background-color: #ffffff;
-    color: #156618;
+    color: #004600;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
