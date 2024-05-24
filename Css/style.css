@@ -81,7 +81,7 @@ header h1 {
 }
 
 .icon:hover{
-    opacity: 0.5;
+    opacity: 0.7;
     cursor: pointer;
 }
 
@@ -142,11 +142,11 @@ nav ul li a {
     font-weight: bold;
     display: block;
     padding: 0.5rem 1rem;
-    transition: all 0.8s;
+    transition: all 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #beffc0;
+    background-color: #deffdf;
 }
 
 .close-menu {
@@ -166,6 +166,7 @@ nav ul li a:hover {
 
 main {
     padding: 2rem 0;
+    height: 2000px; /* só para aumentar para ajustar o form */
 }
 
 .intro {
@@ -183,10 +184,115 @@ main {
     padding: 1rem;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 50px; /* utilizado para desencostar o form */
 }
 
 .services h2 {
     color: #004600;
+}
+
+.contatoPrincipal{
+    text-align: center;
+    /* padding: 14px; */
+    font-size: 40px;
+}
+
+.contatoSecundario{
+    text-align: center;
+    font-size: 13px;
+    padding-bottom: 20px;
+    padding-top: -27px;
+    margin-top: -20px;
+}
+
+.form{
+    width: 60%;
+    margin: 0 auto; 
+    background-color: white;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    border-radius: 20px;
+    padding: 15px;
+    background-color: white;
+}
+
+.form-dados{
+    text-align: center;
+    padding: 8px;
+    position: relative;
+    font-size: 12px;
+}
+
+.form-dados label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-dados input{
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 5px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+    font-size: 10px;
+    border: 1px #d5d5d5 solid;
+    /* border-left: 6px solid #3ba13f; */
+}
+
+.form-dados input:hover{
+    border: 1px #858585 solid;
+    cursor: pointer;
+}
+
+.form-dados a{
+    position: absolute;
+    bottom: -8px;
+    left: 0px;
+    visibility: hidden;
+    transition: all 1s;
+    display: contents;
+}
+
+.select{
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    width: 53%;
+    font-size: 11px;
+    border: 1px #d5d5d5 solid;
+}
+
+.mensagem-text{
+    display: block;
+    margin: 0 auto;
+    width: 53%;
+    border-radius: 5px;
+    font-size: 11px;
+    border: 1px #d5d5d5 solid;
+}
+
+.form-dados.error input{
+    border-color: red;
+}
+
+.form-dados.error a{
+    color: red;
+    visibility: visible;
+    margin-top: 5px;
+}
+
+.botao{
+    background-color: #004600;
+    color: #ffffff;
+    width: 45%;
+    border-radius: 14px;
+    padding: 10px;
+    border: 0;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 auto;
 }
 
 footer {
