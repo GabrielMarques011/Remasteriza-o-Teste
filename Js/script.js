@@ -24,6 +24,9 @@ function validacaoForm(item) {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    console.log(data);
     validacaoForm();
 })
 
@@ -39,12 +42,12 @@ function errorInput(input, message) {
 function validacaoInput(text) {
     const textValue = text.value;
 
-    console.log(text)
-
     if (textValue === '') {
         errorInput(text, "Preencha o campo!")
     } else {
         const formItem = text.parentElement;
         formItem.classList = "form-dados";
     }
+
+    console.log(text.value)
 }

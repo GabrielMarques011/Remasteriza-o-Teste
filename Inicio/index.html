@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Hamburguer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.css"/>
     <link rel="stylesheet" href="../Css/style.css">
 </head>
 <body>
@@ -57,7 +59,7 @@
                 <p>Oferecemos serviços médicos especializados. Entre em contato para mais informações e agendamentos.</p>
             </section>
             
-            <section class="services">
+            <!-- <section class="services">
                 <h2>Nossos Serviços</h2>
                 <ul>
                     <li>Exame Clínico</li>
@@ -69,8 +71,32 @@
                     <li>Raio-X</li>
                     <li>Espirometria</li>
                 </ul>
-            </section>
+            </section> -->
         </div>
+
+        <div class="carousel">
+
+            <!-- <h2>Nossos Serviços</h2> -->
+            <div class="carousel-item">
+             <h1> Exame Clínico</h1>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae,
+                omnis accusantium expedita consequatur quidem molestiae odio atque
+                debitis aut iusto, rem veritatis! Aut quia voluptatibus odit.
+                Dolor officiis vitae tempora.
+              </p>
+            </div>
+            <div class="carousel-item">
+              <h1>Audiometria</h1>
+              <img src="" />
+            </div>
+            <div class="carousel-item"><h1>EEG</h1></div>
+            <div class="carousel-item"><h1>ECG</h1></div>
+            <div class="carousel-item"><h1>Exames de Sangue</h1></div>
+            <div class="carousel-item"><h1>Urina</h1></div>
+            <div class="carousel-item"><h1>Raio-X</h1></div>
+            <div class="carousel-item"><h1>Espirometria</h1></div>
+          </div>  
         
     <div class="container-form">
         <form id="form" class="form">
@@ -82,13 +108,13 @@
             <div class="form-row">
                 <div class="form-dados">
                     <label for="dados">CNPJ ou CPF:</label>
-                    <input type="text" id="dados" placeholder="Informe seu CNPJ ou CPF..." onchange="validacaoCampo(dados)">
+                    <input type="text" id="dados" name="dados" placeholder="Informe seu CNPJ ou CPF..." onchange="validacaoInput(dados)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
         
                 <div class="form-dados">
                     <label for="empresa">Nome da Empresa:</label>
-                    <input type="text" id="empresa" placeholder="Informe o nome completo da empresa..." onchange="validacaoCampo(empresa)">
+                    <input type="text" id="empresa" name="empresa" placeholder="Informe o nome completo da empresa..." onchange="validacaoInput(empresa)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
             </div>
@@ -96,13 +122,13 @@
             <div class="form-row">
                 <div class="form-dados">
                     <label for="bairro">Bairro:</label>
-                    <input type="text" id="bairro" placeholder="Informe o seu bairro..." onchange="validacaoCampo(bairro)">
+                    <input type="text" id="bairro" name="bairro" placeholder="Informe o seu bairro..." onchange="validacaoInput(bairro)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
         
                 <div class="form-dados">
                     <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" placeholder="Informe o sua cidade..." onchange="validacaoCampo(cidade)">
+                    <input type="text" id="cidade" name="cidade" placeholder="Informe o sua cidade..." onchange="validacaoInput(cidade)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
             </div>
@@ -110,13 +136,13 @@
             <div class="form-row">
                 <div class="form-dados">
                     <label for="nome">Seu Nome:</label>
-                    <input type="text" id="nome" placeholder="Informe o seu nome completo..." onchange="validacaoCampo(nome)">
+                    <input type="text" id="nome" name="nome" placeholder="Informe o seu nome completo..." onchange="validacaoInput(nome)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
         
                 <div class="form-dados">
                     <label for="email">Seu E-mail:</label>
-                    <input type="email" id="email" placeholder="Informe o seu email..." onchange="validacaoCampo(email)">
+                    <input type="email" id="email" name="email" placeholder="Informe o seu email..." onchange="validacaoInput(email)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
             </div>
@@ -124,13 +150,13 @@
             <div class="form-row">
                 <div class="form-dados">
                     <label for="telefone">Seu Telefone:</label>
-                    <input type="tel" id="telefone" placeholder="Informe o seu telefone..." onchange="validacaoCampo(telefone)">
+                    <input type="tel" id="telefone" name="telefone" placeholder="Informe o seu telefone..." onchange="validacaoInput(telefone)">
                     <a>Aqui vai a mensagem de erro...</a>
                 </div>
         
                 <div class="form-dados">
                     <label for="departamento">Departamento:</label>
-                    <select class="select">
+                    <select class="select" name="select">
                         <option value="venda">Comercial/Vendas</option>
                         <option value="financeiro">Financeiro</option>
                         <option value="orcamento">Orçamento</option>
@@ -143,7 +169,7 @@
             <!-- Área de mensagem ocupa a linha inteira -->
             <div class="form-dados mensagem">
                 <label for="mensagem">Mensagem:</label>
-                <textarea placeholder="Digite sua mensagem" rows=5 cols=25 class="mensagem-text"></textarea>
+                <textarea name="mensagem" placeholder="Digite sua mensagem" rows=5 cols=25 class="mensagem-text"></textarea>
             </div>
         
             <!-- Botão de envio ocupa a linha inteira e centralizado -->
@@ -157,12 +183,16 @@
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container-footer">
             <p>&copy; 2012 - 2024 Dejemajosa. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script src="../Js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.js"></script>
+    <script src="../Js/carrossel.js"></script>
 
 </body>
 </html>

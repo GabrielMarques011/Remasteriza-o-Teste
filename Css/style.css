@@ -3,7 +3,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    background-color: #12712e;
+    background-color: #027f06;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -46,7 +46,7 @@ body {
 }
 
 .container {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -165,17 +165,26 @@ nav ul li a:hover {
 }
 
 main {
-    padding: 2rem 0;
+    /* padding: 2rem 0; */
     height: 2000px; /* só para aumentar para ajustar o form */
 }
 
 .intro {
     text-align: center;
     color: rgb(255, 255, 255);
+    margin: 50px;
 }
 
 .intro h2 {
     color: #ffffff;
+    font-size: 50px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+.intro p {
+    color: #ffffff;
+    font-size: 15px;
 }
 
 .services {
@@ -192,7 +201,13 @@ main {
 }
 
 .container-form{
-    background-color: white;
+    background-image: url('../Img/imgFundo6atualizacao.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    /* background-attachment: fixed; */
+    padding: 25px;  
 }
 
 .contatoPrincipal {
@@ -212,7 +227,7 @@ main {
 .form {
     width: 40%;
     margin: 0 auto;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     padding: 15px;
 }
@@ -235,6 +250,8 @@ main {
 .form-dados label {
     display: inline-block;
     margin-bottom: 5px;
+    color: #215601;
+    font-size: 15px;
 }
 
 /* Ajustado: largura dos inputs e outras caixas de entrada para 100% */
@@ -243,9 +260,9 @@ main {
 .mensagem-text {
     width: 95%;
     border-radius: 8px;
-    padding: 8px;
+    padding: 12px;
     margin-bottom: 5px;
-    font-size: 10px;
+    font-size: 11px;
     border: 1px #d5d5d5 solid;
     box-shadow: rgb(0 0 0 / 8%) 0px 3px 6px, rgb(0 0 0 / 0%) 0px 3px 6px;
 }
@@ -319,4 +336,149 @@ footer {
 
 footer p {
     margin: 0;
+}
+
+/* ------------- INICIANDO CARROSSEL*/
+
+.slick-dotted.slick-slider { /* removendo o bottom da bibiblioteca */
+    margin-bottom: 0px;
+}
+
+.carousel {
+    width: 100%;
+    height: 700px;
+    margin: 0;  /* Remove a margem */
+    padding: 0; /* Remove o padding */
+    overflow: hidden; /* Garante que o conteúdo extra seja escondido */
+    position: relative; /* Para posicionamento absoluto da legenda */
+    background-image: url('../Img/dejemajosa-img-1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 700px !important; /* usado para dar o tamanho o fundo preto da img */
+    min-height: 1px;
+}
+
+
+.carousel-item {
+    position: relative; /* Necessário para posicionar o ::before */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Cor do texto da legenda */
+    font-size: 20px; /* Tamanho da fonte da legenda */
+    height: 500px; /* Ajuste conforme necessário */
+    transition: transform 2.0s; /* Transição para animação */
+    overflow: hidden;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Camada de escurecimento com opacidade */
+    z-index: 1;
+}
+
+.carousel-item h1, 
+.carousel-item p {
+    position: relative;
+    z-index: 2; /* Coloque o texto acima da camada de escurecimento */
+}
+
+.carousel-item p{
+    padding: 230px;
+    margin-top: 15%;
+}
+
+/* Efeito de hover para os itens do carrossel */
+.carousel-item:hover {
+    transform: scale(1.03); /* Aumenta ligeiramente o item ao passar o mouse */
+}
+
+/* Estilização dos pontos de navegação do carrossel */
+.slick-dots {
+    position: absolute;
+    bottom: 20px; /* Ajuste conforme necessário */
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    z-index: 2;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    background-color: white; /* Cor dos pontos */
+    border: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 80%;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+
+.slick-dots li.slick-active button:before { 
+    opacity: 0.2;
+    color: #33333300;
+}
+
+.slick-dots li button:before { 
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: rgba(255, 255, 255, 0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button {
+    background-color: #4CAF50; /* Cor dos pontos ativos */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .carousel-item {
+        font-size: 14px; /* Reduz o tamanho da fonte em telas menores */
+        height: 300px; /* Ajusta a altura para telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        font-size: 12px; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas */
+        height: 250px; /* Ajusta a altura para telas muito pequenas */
+    }
+}
+
+@media (max-width: 340px) {
+    .carousel-item {
+        font-size: 12px; /* Reduz ainda mais o tamanho da fonte em telas muito pequenas */
+        height: 200px; /* Ajusta a altura para telas muito pequenas */
+    }
 }
