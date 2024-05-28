@@ -5,4 +5,4 @@ $('.carousel').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
 })
-console.log('PASSOU AQUI')
+/* console.log('PASSOU AQUI') */

@@ -6,10 +6,12 @@ const cidade = document.getElementById("cidade");
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
 const telefone = document.getElementById("telefone");
+const select = document.getElementById("select");
+const mensagem = document.getElementById("mensagem");
 
-const itensLista = ["dados", "empresa", "bairro", "cidade", "nome", "email", "telefone"]
+const itensLista = ["dados", "empresa", "bairro", "cidade", "nome", "email", "telefone", "select", "mensagem"]
 
-function validacaoForm(item) {
+function validacaoForm() {
     itensLista.forEach(item => {
         const input = document.getElementById(item);
         
@@ -22,14 +24,6 @@ function validacaoForm(item) {
     });
 }
 
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    console.log(data);
-    validacaoForm();
-})
-
 function errorInput(input, message) {
     const formItem = input.parentElement;
     const textMessage = formItem.querySelector("a");
@@ -38,6 +32,24 @@ function errorInput(input, message) {
 
     formItem.className = "form-dados error"
 }
+
+function validacaoSubmitLimpar(){
+    itensLista.forEach(item=>{
+        document.getElementById(item).value = '';
+    })
+}
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    if(data.dados == '' || data.empresa == '' || data.bairro == '' || data.cidade == '' || data.nome == '' || data.email == '' || data.telefone == ''){
+        validacaoForm();
+    }else{
+        validacaoSubmitLimpar();
+    }
+})
 
 function validacaoInput(text) {
     const textValue = text.value;
