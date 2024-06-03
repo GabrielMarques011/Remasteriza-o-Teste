@@ -9,7 +9,6 @@
     padding: 0; /* Remove o padding */
     overflow: hidden; /* Garante que o conteúdo extra seja escondido */
     position: relative; /* Para posicionamento absoluto da legenda */
-    background-image: url('../Img/dejemajosa-img-1.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,7 +33,6 @@
     font-size: 20px; /* Tamanho da fonte da legenda */
     height: 500px; /* Ajuste conforme necessário */
     transition: transform 2.0s; /* Transição para animação */
-    overflow: hidden;
 }
 
 .carousel-item::before {
@@ -57,6 +55,16 @@
 .carousel-item p{
     padding: 230px;
     margin-top: 15%;
+}
+
+
+.carousel-item img {
+    width: 100%;       /* A imagem ocupa toda a largura do contêiner */
+    height: 100%;      /* A imagem ocupa toda a altura do contêiner */
+    object-fit: cover; /* A imagem cobre o contêiner sem distorcer, mas pode cortar um pouco */
+    position: absolute;/* A imagem é posicionada dentro do contêiner de forma absoluta */
+    top: 0;            /* A imagem começa do topo do contêiner */
+    left: 0;           /* A imagem começa da borda esquerda do contêiner */
 }
 
 /* Efeito de hover para os itens do carrossel */
@@ -117,6 +125,10 @@
 
 .slick-dots li.slick-active button {
     background-color: #4CAF50; /* Cor dos pontos ativos */
+}
+
+.slick-dotted.slick-slider { /* Usado apenas para tirar o buttom que tem entre a img e o form */
+    margin-bottom: -20px;
 }
 
 /* Ajustes responsivos */
