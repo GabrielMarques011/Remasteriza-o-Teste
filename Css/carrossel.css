@@ -60,7 +60,7 @@
 
 .carousel-item img {
     width: 100%;       /* A imagem ocupa toda a largura do contêiner */
-    height: 100%;      /* A imagem ocupa toda a altura do contêiner */
+    height: 148%;      /* A imagem ocupa toda a altura do contêiner */
     object-fit: cover; /* A imagem cobre o contêiner sem distorcer, mas pode cortar um pouco */
     position: absolute;/* A imagem é posicionada dentro do contêiner de forma absoluta */
     top: 0;            /* A imagem começa do topo do contêiner */
